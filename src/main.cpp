@@ -23,10 +23,6 @@ void loop() {
     count++;
     value += temp;
 
-    if (!measured) {
-        Serial.println(temp);
-    }
-
     if (millis() - lastMillis > 5000 && !measured) {
         Serial.println((float) value / count);
         Serial.println(count);
