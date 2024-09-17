@@ -19,12 +19,12 @@ void loop() {
     uint16_t measurement = analogRead(A4);
     float voltage = STEP * measurement;
     float current =  (5 - voltage) / RESISTOR;
-    int temp = (calcTemp(voltage / current) - 273.15);
+    int temp = (calcTemp(voltage / current) - 273.15) * 100;
     count++;
     value += temp;
 
     if (millis() - lastMillis > 5000 && !measured) {
-        Serial.println((float) value / count);
+        Serial.println(value / 100.0 / count);
         Serial.println(count);
         measured = true;
     }
