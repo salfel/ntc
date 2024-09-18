@@ -2,6 +2,8 @@
 
 float calcTemp(int resistance);
 
+float calibrateTemp(float temp);
+
 void setup() {
     pinMode(A4, INPUT);
     Serial.begin(9600);
@@ -24,7 +26,7 @@ void loop() {
     value += temp;
 
     if (millis() - lastMillis > 5000 && !measured) {
-        Serial.println(value / 100.0 / count);
+        Serial.println(calibrateTemp(value / 100.0 / count));
         Serial.println(count);
         measured = true;
     }
@@ -40,4 +42,8 @@ float calcTemp(int resistance) {
     float value =  1/T_25 + 1/BETA * log10(resistance / R_25);
 
     return 1/value;
+}
+
+float calibrateTemp(float temp) {
+    return 2.41229 * temp - 41.286;
 }
