@@ -34,6 +34,7 @@ void loop() {
 
 // ohne serial println 10977
 // mit serial println 1219
+// messgerät nr. 2
 
 const float BETA = 3977;
 const float T_25 = 298; 
