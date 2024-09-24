@@ -9,6 +9,9 @@ void setup() {
     Serial.begin(9600);
 }
 
+const float BETA = 3977;
+const float T_25 = 298; 
+const float R_25 = 2875;
 const float STEP = 5.0 / 1024;
 const uint16_t RESISTOR = 2700;
 
@@ -32,13 +35,6 @@ void loop() {
     }
 }
 
-// ohne serial println 10977
-// mit serial println 1219
-// messgerät nr. 2
-
-const float BETA = 3977;
-const float T_25 = 298; 
-const float R_25 = 2875;
 float calcTemp(int resistance) {
     float value =  1/T_25 + 1/BETA * log10(resistance / R_25);
 
