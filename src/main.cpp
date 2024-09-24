@@ -42,5 +42,5 @@ float calcTemp(int resistance) {
 }
 
 float calibrateTemp(float temp) {
-    return 2.41229 * temp - 41.286;
+    return 2.673557 * temp - 44.290;
 }
