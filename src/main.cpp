@@ -26,6 +26,10 @@ void loop() {
     static unsigned long lastMillis = millis();
     static int isHeating = HIGH;
 
+    if (millis() - lastMillis < 500) {
+        return;
+    }
+
     uint16_t measurement = analogRead(A4);
     float voltage = 5.0 - (measurement * STEP);
 
