@@ -10,8 +10,8 @@ const float C = -0.00006335;
 const float STEP = 5.0 / 1024;
 const uint16_t RESISTOR = 2700;
 
-const float UPPER_TRESHHOLD = 27;
-const float LOWER_TRESHHOLD = 26;
+const uint8_t UPPER_TRESHHOLD = 27;
+const uint8_t LOWER_TRESHHOLD = 26;
 
 void setup() {
     pinMode(A4, INPUT);
