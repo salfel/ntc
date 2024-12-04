@@ -43,6 +43,8 @@ void loop() {
     }
 
     digitalWrite(OUTPUT_PIN, isHeating);
+    Serial.print(">output:");
+    Serial.println(isHeating);
 
     lastMillis = millis();
 }
